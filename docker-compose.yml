@@ -18,6 +18,30 @@ services:
     command: /bin/bash -c "uvicorn main:app --reload --port 8000 --host=0.0.0.0 --log-level=info"
     volumes:
       - ./auth_service:/auth_service
+
+  product:
+    build: ./product_service
+    ports:
+      - "8001:8001"
+    command: /bin/bash -c "uvicorn main:app --reload --port 8000 --host=0.0.0.0 --log-level=info"
+    volumes:
+      - ./product_service:/product_service
+  
+  service:
+    build: ./user_service
+    ports:
+      - "8002:8002"
+    command: /bin/bash -c "uvicorn main:app --reload --port 8000 --host=0.0.0.0 --log-level=info"
+    volumes:
+      - ./user_service:/user_service
+  app:
+    build: ./app
+    ports:
+      - "8003:8003"
+    command: /bin/bash -c "uvicorn main:app --reload --port 8000 --host=0.0.0.0 --log-level=info"
+    volumes:
+      - ./app:/app
+
   db:
     image: postgres:17-alpine
     container_name: db

@@ -2,15 +2,15 @@ from fastapi import FastAPI, Depends, HTTPException, status, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from fastapi.responses import RedirectResponse
-from app.database import get_db
-from app.models import User
-from app.schemas import UserCreate, UserOut, Token, TokenRefresh
-from app.auth import (
+from database import get_db
+from models import User
+from schemas import UserCreate, UserOut, Token, TokenRefresh
+from auth import (
     authenticate_user, get_password_hash, create_access_token, create_refresh_token,
     save_refresh_token, is_refresh_token_valid, revoke_refresh_token, decode_token
 )
-from app.dependencies import get_current_user, role_required, roles_required
-from app.vk_oauth import get_vk_auth_url, exchange_code_for_token, get_vk_user_info
+from dependencies import get_current_user, role_required, roles_required
+from vk_oauth import get_vk_auth_url, exchange_code_for_token, get_vk_user_info
 from datetime import datetime, timedelta, timezone
 
 app = FastAPI()

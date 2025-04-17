@@ -1,6 +1,6 @@
 import requests
 from fastapi import HTTPException
-from app.config import VK_CLIENT_ID, VK_CLIENT_SECRET, VK_REDIRECT_URI
+from config import VK_CLIENT_ID, VK_CLIENT_SECRET, VK_REDIRECT_URI
 
 def get_vk_auth_url():
     return (

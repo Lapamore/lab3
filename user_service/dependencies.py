@@ -1,7 +1,7 @@
 from fastapi import Request, HTTPException, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import jwt
-from .config import SECRET_KEY, ALGORITHM
+from config import SECRET_KEY, ALGORITHM
 
 class JWTBearer(HTTPBearer):
     async def __call__(self, request: Request):

@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from .database import get_db
-from .models import Product
-from .schemas import ProductCreate, ProductOut
-from .dependencies import JWTBearer, role_required
+from database import get_db
+from models import Product
+from schemas import ProductCreate, ProductOut
+from dependencies import JWTBearer, role_required
 
 app = FastAPI(title="Product Service")
 

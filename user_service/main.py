@@ -1,18 +1,18 @@
 from fastapi import FastAPI, Depends, HTTPException, Body
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from .database import get_db
-from .models import User
-from .schemas import UserOut
-from .dependencies import JWTBearer, role_required
+from database import get_db
+from models import User
+from schemas import UserOut
+from dependencies import JWTBearer, role_required
 from sqlalchemy import select as sync_select
 from fastapi import status
-from .models import User
+from models import User
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from .database import get_db
-from .schemas import UserOut
-from .dependencies import JWTBearer, role_required
+from database import get_db
+from schemas import UserOut
+from dependencies import JWTBearer, role_required
 from fastapi import FastAPI, Depends, HTTPException, Body
 from pydantic import BaseModel, EmailStr
 
