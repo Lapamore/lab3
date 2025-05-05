@@ -19,7 +19,7 @@
    ```
 
 2. **Создайте базу данных PostgreSQL `lab3`** (если не создана).
-   - user: `postgres`, password: `ufhybnehf23`
+   - user: `postgres`, password: `your_passwors`
 
 3. **Создайте таблицы** (см. SQL ниже)
 
